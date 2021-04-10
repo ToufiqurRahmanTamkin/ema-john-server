@@ -65,8 +65,9 @@ client.connect(err => {
     ordersCollection.insertOne(order)
     .then(result => {
       // console.log(result.insertedCount);
-      res.sendStatus(result.insertedCount > 0)
+      res.send(result.insertedCount > 0)
     })
+    .catch(err  => console.log(err))
   })
 
 });
